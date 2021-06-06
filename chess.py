@@ -1,3 +1,5 @@
+import sys
+
 class board:
     def __init__(self, pieces):
         self.pieces = pieces
@@ -233,13 +235,14 @@ class s(piece):
         super().__init__(acr, x, y, is_black)
 
 
-def main(input_path):
+def main():
     """
     reads input file
     create board and then adds all pieces to board.
     :param input_path: string of input file's name
     :return: -
     """
+    input_path = sys.argv[-1]
     pieces = []
     global board
     board = board(pieces)
@@ -291,4 +294,4 @@ def main(input_path):
     return
 
 if __name__ == '__main__':
-    main("input.txt")
+    main()
